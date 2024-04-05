@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Start service firewalld, if not started
+      ansible.builtin.service:
+        name: firewalld
+        state: started
+        enabled: true
